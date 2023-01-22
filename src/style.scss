@@ -1,53 +1,174 @@
 @import '_reset';
 @import '_variables';
+@import '_flexbox.scss';
 
 body {
-    background-color: $black;
-    color: $black;
-    display: flex;
-    justify-content: center;
+    font-family: 'Monomaniac-one';
 }
 
 .container {
-    width: 80%;
+    width: 100vw;
     height: 100vh;
+    display: grid;
+    grid-template: 100% / clamp(300px, 45%, 500px) 1fr;
 }
 
-.header {
+// SIDEBAR
 
-    width: 100%;
-    height: 10vh;
-
+.sidebar {
+    height: 100vh;
+    background-color: $green;
+    border: $border;
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
     align-items: center;
-    
+}
+
+.titlediv {
+    @include align(center, row, center);
+    height: 80px;
+    width: 100%;
     background-color: $white;
 
-    h3 {
-        font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-        font-weight: 800;
-        font-size: 30px;
-        padding-left: 10%;
-    }
+    border-bottom: $border;
 
-    h3:last-child {
-        padding-right: 10%;
-        cursor: pointer;
-    }
+    letter-spacing: 35%;
+    font-size: 40px;
+}
+
+// PROFILE SECTION
+
+.profilediv {
+    display: flex;
+    width: 90%;
+    gap: 20px;
+    padding: 5% 5% 5% 7%;
 
 }
 
-.tododisplay {
-    margin-top: 5%;
-    padding: 5px;
-
+.profilepic {
+    flex-shrink: 0;
+    height: 100px;
+    width: 100px;
     background-color: $white;
+    border: $border;
+}
+
+.profileinfo {
+    width: 100%;
+
+    p {
+        letter-spacing: 3px;
+        padding-top: 3px;
+    }
+}
+
+.levelbar {
+    width: clamp(130px, 80%, 300px);
+    height: 20px;
+
+    margin-top: 10px;
+
+    background-color: $yellow;
+
+    border: $border;
+}
+
+.levelbaroverlay {
+    width: 60%;
+    height: 20px;
+
+    background-color: $red;
+    border-right: $border;
+}
+
+.sidebarline {
+    border: 1px solid $black;
+    width: 90%;
+    margin-top: 15px;
+}
+
+// NAV SECTION
+
+.navdiv {
+
+    @include align(space-between, row, flex-start);
+    width: 90%;
+    margin: 20px 0;
+
+
+    a {
+        color: $white;
+        font-size: 22px;
+        text-decoration: none;
+
+        &:hover {
+            color: $black;
+        }
+    }
+}
+
+.questnav {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.travelnav {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.settingsnav {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+// PROJECT SECTION
+
+.questdiv {
+    width: 90%;
     color: $black;
 }
 
-.todo {
+.questdivtitle {
     display: flex;
-    justify-content: space-between;
-    padding: 5px;
+    gap: 10px;
+    font-size: 30px;
+
+    h1 {
+        text-decoration: underline;
+    }
+
+    a {
+        color: $black;
+        text-decoration: none;
+
+        &:hover {
+            color: $white;
+        }
+
+    }
+}
+
+.questlist {
+    @include align(flex-start, column, flex-start);
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.quest {
+
+    font-size: 22px;
+
+    a {
+        color: $white;
+        text-decoration: none;
+
+        &:hover {
+            color: $black;
+        }
+    }
 }

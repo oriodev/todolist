@@ -1,4 +1,25 @@
-$black: #0E0A18;
-$purple: #3c154c;
-$blue: #4717F7;
-$white: #E9DFE0;
+// colours
+$background: #FBFBFB;
+$white: #ffffff;
+$green: #70A288;
+$yellow: #DAB785;
+$red: #D5896F;
+$black: black;
+
+// fonts
+@font-face {
+    font-family: 'Monomaniac-one';
+    src: url('./MonomaniacOne-Regular.woff') format('woff'),
+}
+
+// numbers
+$border: 2px solid black;
+
+// icons
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 500,
+  'GRAD' 200,
+  'opsz' 48
+}
