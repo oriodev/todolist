@@ -1,0 +1,53 @@
+@import '_reset';
+@import '_variables';
+
+body {
+    background-color: $black;
+    color: $black;
+    display: flex;
+    justify-content: center;
+}
+
+.container {
+    width: 80%;
+    height: 100vh;
+}
+
+.header {
+
+    width: 100%;
+    height: 10vh;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+    background-color: $white;
+
+    h3 {
+        font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        font-weight: 800;
+        font-size: 30px;
+        padding-left: 10%;
+    }
+
+    h3:last-child {
+        padding-right: 10%;
+        cursor: pointer;
+    }
+
+}
+
+.tododisplay {
+    margin-top: 5%;
+    padding: 5px;
+
+    background-color: $white;
+    color: $black;
+}
+
+.todo {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px;
+}
