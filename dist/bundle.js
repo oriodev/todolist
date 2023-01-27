@@ -120,13 +120,33 @@ eval("\n\n/* istanbul ignore next  */\nfunction styleTagTransform(css, styleElem
 
 /***/ }),
 
+/***/ "./src/createTodo.js":
+/*!***************************!*\
+  !*** ./src/createTodo.js ***!
+  \***************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"addTaskProcess\": () => (/* binding */ addTaskProcess)\n/* harmony export */ });\n/* harmony import */ var _refreshes__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./refreshes */ \"./src/refreshes.js\");\n\n\n// THE TODO LIST\nlet todoList = [];\n\n// THE TODO CLASS\nclass Todo {\n    constructor(task) {\n        this.task = task;\n    }\n}\n\nfunction createTodo() {\n    const taskName = document.getElementById(\"tasknameinput\").value;\n\n    const newTodo = new Todo(taskName);\n    todoList.push(newTodo);\n\n}\n\nfunction updateTodoList() {\n\n    let todoListLength = todoList.length;\n\n    for (let i = 0; i < todoListLength; i++) {\n\n        let taskName = todoList[i].task;\n\n        const todosGoHere = document.getElementById(\"todosgohere\");\n        const taskDiv = document.createElement(\"div\");\n        taskDiv.setAttribute(\"class\", \"todo\");\n        todosGoHere.appendChild(taskDiv);\n    \n        const firsthalf = document.createElement(\"div\");\n        firsthalf.setAttribute(\"class\", \"firsthalf\");\n        taskDiv.appendChild(firsthalf);\n    \n        const todoBtn = document.createElement(\"div\");\n        todoBtn.setAttribute(\"class\", \"todobutton\");\n        firsthalf.appendChild(todoBtn);\n    \n        const taskText = document.createElement(\"p\");\n        taskText.textContent = taskName;\n        firsthalf.appendChild(taskText);\n\n    }\n    \n}\n\nfunction addTaskProcess() {\n    (0,_refreshes__WEBPACK_IMPORTED_MODULE_0__.clearTodoDisplay)();\n    createTodo();\n    updateTodoList();\n    (0,_refreshes__WEBPACK_IMPORTED_MODULE_0__.clearTextInput)(\"tasknameinput\");\n}\n\n\n// not exported: Todo class, todoList, createTodo, updateTodoList\n\n//# sourceURL=webpack://sass-setup/./src/createTodo.js?");
+
+/***/ }),
+
 /***/ "./src/index.js":
 /*!**********************!*\
   !*** ./src/index.js ***!
   \**********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _style_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./style.scss */ \"./src/style.scss\");\n\n\n// THE TODO LIST\nlet todoList = [];\n\n// THE TODO CLASS\nclass Todo {\n    constructor(task) {\n        this.task = task;\n    }\n}\n\n// CREATE TODO ON BUTTON PRESS\n\nconst addTaskBtn = document.getElementById(\"addtaskbtn\");\naddTaskBtn.addEventListener(\"click\", addTaskProcess);\n\nfunction createTodo() {\n    const taskName = document.getElementById(\"tasknameinput\").value;\n\n    const newTodo = new Todo(taskName);\n    todoList.push(newTodo);\n\n}\n\nfunction updateTodoList() {\n\n    let todoListLength = todoList.length;\n\n    for (let i = 0; i < todoListLength; i++) {\n\n        let taskName = todoList[i].task;\n\n        const todosGoHere = document.getElementById(\"todosgohere\");\n        const taskDiv = document.createElement(\"div\");\n        taskDiv.setAttribute(\"class\", \"todo\");\n        todosGoHere.appendChild(taskDiv);\n    \n        const firsthalf = document.createElement(\"div\");\n        firsthalf.setAttribute(\"class\", \"firsthalf\");\n        taskDiv.appendChild(firsthalf);\n    \n        const todoBtn = document.createElement(\"div\");\n        todoBtn.setAttribute(\"class\", \"todobutton\");\n        firsthalf.appendChild(todoBtn);\n    \n        const taskText = document.createElement(\"p\");\n        taskText.textContent = taskName;\n        firsthalf.appendChild(taskText);\n\n    }\n    \n}\n\nfunction addTaskProcess() {\n    clearTodoDisplay();\n    createTodo();\n    updateTodoList();\n    clearTextInput(\"tasknameinput\");\n}\n\n// CLEAR THE TEXT INPUT\nfunction clearTextInput(input) {\n    document.getElementById(input).value = \"\";\n}\n\n// CLEAR THE TODO DISPLAY\n\nfunction clearTodoDisplay() {\n    const todosGoHere = document.getElementById(\"todosgohere\");\n\n    while (todosGoHere.childNodes.length > 0) {\n\n        todosGoHere.removeChild(todosGoHere.lastChild);\n    }\n    \n}\n\n\n//# sourceURL=webpack://sass-setup/./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _style_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./style.scss */ \"./src/style.scss\");\n/* harmony import */ var _createTodo__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./createTodo */ \"./src/createTodo.js\");\n\n\n\n// ADDS EVENT LISTENERS\n\nfunction addEventListenersToButtons() {\n    const addTaskBtn = document.getElementById(\"addtaskbtn\");\n    addTaskBtn.addEventListener(\"click\", _createTodo__WEBPACK_IMPORTED_MODULE_1__.addTaskProcess);\n}\n\naddEventListenersToButtons();\n\n//# sourceURL=webpack://sass-setup/./src/index.js?");
+
+/***/ }),
+
+/***/ "./src/refreshes.js":
+/*!**************************!*\
+  !*** ./src/refreshes.js ***!
+  \**************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"clearTextInput\": () => (/* binding */ clearTextInput),\n/* harmony export */   \"clearTodoDisplay\": () => (/* binding */ clearTodoDisplay)\n/* harmony export */ });\n// CLEAR THE TEXT INPUT\nfunction clearTextInput(input) {\n    document.getElementById(input).value = \"\";\n}\n\n// CLEAR THE TODO DISPLAY\n\nfunction clearTodoDisplay() {\n    const todosGoHere = document.getElementById(\"todosgohere\");\n\n    while (todosGoHere.childNodes.length > 0) {\n\n        todosGoHere.removeChild(todosGoHere.lastChild);\n    }\n    \n}\n\n\n\n//# sourceURL=webpack://sass-setup/./src/refreshes.js?");
 
 /***/ }),
 
