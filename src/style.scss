@@ -30,6 +30,7 @@ body {
     width: 100%;
     padding-left: 30px;
 
+
     h1 {
         font-size: 40px;
         letter-spacing: 2px;
@@ -38,7 +39,7 @@ body {
 }
 
 .addtodo {
-    padding-left: 30px;
+    margin-left: 27px;
 
     display: flex;
     gap: 10px;
@@ -59,9 +60,65 @@ body {
         padding: 10px;
         font-weight: bold;
         font-size: 15px;
+
+        &:hover {
+            background-color: $green;
+        }
     }
 }
 
+.todosgohere {
+
+    display: flex;
+    flex-direction: column;
+    margin-left: 27px;
+    margin-top: 30px;
+    font-size: 23px;
+    width: 90%;
+    gap: 10px;
+
+}
+
+.todo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: clamp(50px, 80%, 600px);
+}
+
+.firsthalf {
+    display: flex;
+    gap: 10px;
+}
+
+.secondhalf {
+    display: flex;
+    gap: 10px;
+}
+
+.todobutton {
+
+    border: $border;
+    border-radius: 50%;
+    background-color: $red;
+    width: 17px;
+    height: 17px;
+    margin-top: 5px;
+    cursor: pointer;
+
+}
+
+// .todoname {
+
+// }
+
+// .tododate {
+
+// }
+
+// .todocoins {
+
+// }
 
 // SIDEBAR
 

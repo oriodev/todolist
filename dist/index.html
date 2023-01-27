@@ -7,6 +7,7 @@
     <title>QUEST LOG</title>
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🧭</text></svg>">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <script src="./bundle.js" defer></script>
 </head>
 <body>
 
@@ -86,13 +87,16 @@
                 <h1>DEFAULT</h1>
             </div>
             <div class="addtodo">
-                <input type="text">
-                <button>Add Task</button>
+                <input type="text" id="tasknameinput">
+                <button type="button" id="addtaskbtn">Add Task</button>
             </div>
+
+            <div class="todosgohere" id="todosgohere">
+
+            </div>
+
         </div>
 
     </div>
-
-    <script src="./bundle.js"></script>
 </body>
 </html>
