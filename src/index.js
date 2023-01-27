@@ -1,5 +1,18 @@
 import "./style.scss";
+import '@fortawesome/fontawesome-free/js/fontawesome'
+import '@fortawesome/fontawesome-free/js/solid'
+
+
+import Sortable from 'sortablejs';
 import { addTaskProcess } from "./createTodo";
+
+// MAKES IT SORTABLE
+
+function sortableList() {
+    let player = document.getElementById("todosgohere");
+    new Sortable(player);
+}
+
 
 // ADDS EVENT LISTENERS
 
@@ -15,3 +28,4 @@ function addEventListenersToButtons() {
 }
 
 addEventListenersToButtons();
+sortableList();

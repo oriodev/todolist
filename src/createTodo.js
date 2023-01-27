@@ -43,6 +43,14 @@ function updateTodoList() {
         taskText.textContent = taskName;
         firsthalf.appendChild(taskText);
 
+        const secondhalf = document.createElement("div");
+        secondhalf.setAttribute("class", "firsthalf");
+        taskDiv.appendChild(secondhalf);       
+
+        const dragBtn = document.createElement("i");
+        dragBtn.setAttribute("class", "fa fa-solid fa-bars");
+        secondhalf.appendChild(dragBtn);
+
     }
     
 }

@@ -2,6 +2,7 @@
 @import '_variables';
 @import '_flexbox.scss';
 
+
 body {
     font-family: 'Monomaniac-one';
 }
@@ -83,7 +84,12 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: clamp(50px, 80%, 600px);
+    width: clamp(50px, 90%, 600px);
+
+}
+
+.fa:hover {
+    background-color: red;
 }
 
 .firsthalf {
