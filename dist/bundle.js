@@ -136,7 +136,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
   \**********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _style_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./style.scss */ \"./src/style.scss\");\n/* harmony import */ var _createTodo__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./createTodo */ \"./src/createTodo.js\");\n\n\n\n// ADDS EVENT LISTENERS\n\nfunction addEventListenersToButtons() {\n    const addTaskBtn = document.getElementById(\"addtaskbtn\");\n    addTaskBtn.addEventListener(\"click\", _createTodo__WEBPACK_IMPORTED_MODULE_1__.addTaskProcess);\n}\n\naddEventListenersToButtons();\n\n//# sourceURL=webpack://sass-setup/./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _style_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./style.scss */ \"./src/style.scss\");\n/* harmony import */ var _createTodo__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./createTodo */ \"./src/createTodo.js\");\n\n\n\n// ADDS EVENT LISTENERS\n\nfunction addEventListenersToButtons() {\n    const addTaskBtn = document.getElementById(\"addtaskbtn\");\n    addTaskBtn.addEventListener(\"click\", _createTodo__WEBPACK_IMPORTED_MODULE_1__.addTaskProcess);\n\n    document.getElementById('tasknameinput').onkeyup = function(e) {\n        if (e.keyCode == 13) {\n          document.getElementById('addtaskbtn').click();\n        }\n      }\n}\n\naddEventListenersToButtons();\n\n//# sourceURL=webpack://sass-setup/./src/index.js?");
 
 /***/ }),
 
